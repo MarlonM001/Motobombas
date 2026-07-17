@@ -65,7 +65,7 @@ a:hover { color: var(--blue-dark); }
 .hero-inner {
   position: relative; z-index: 2;
   display: flex; flex-direction: column; align-items: center; text-align: center;
-  max-width: 900px; margin: 0 auto; padding: 120px 48px 0; width: 100%;
+  max-width: 900px; margin: 0 auto; padding: 120px 48px 90px; width: 100%;
 }
 .hero-top { animation: fadeUp 0.8s ease both; display: flex; flex-direction: column; align-items: center; }
 .eyebrow {
@@ -96,11 +96,6 @@ a:hover { color: var(--blue-dark); }
   animation: fadeIn 1s ease 0.2s both; width: 100%; max-width: 960px; height: 420px;
   border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.35); position: relative;
 }
-.hero-stats { display: flex; gap: 56px; justify-content: center; flex-wrap: wrap; padding: 44px 0 60px; }
-.hero-stat { text-align: center; }
-.hero-stat .num { font-size: 28px; font-weight: 800; color: #FFFFFF; }
-.hero-stat .label { font-size: 13px; color: #B9D3F2; }
-.hero-divider { width: 1px; background: rgba(255,255,255,0.2); }
 
 /* ---------- Servicios ---------- */
 .services-section { max-width: 1280px; margin: 0 auto; padding: 100px 48px 80px; }
@@ -230,7 +225,7 @@ footer { background: var(--gray-900); padding: 64px 48px 0; }
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero { min-height: auto; }
-  .hero-inner { padding: 80px 24px 0; }
+  .hero-inner { padding: 80px 24px 56px; }
   .hero h1 { font-size: 40px; }
   .hero p { font-size: 17px; }
   .hero-image { height: 280px; }
@@ -242,7 +237,6 @@ footer { background: var(--gray-900); padding: 64px 48px 0; }
 }
 @media (max-width: 560px) {
   .hero h1 { font-size: 32px; }
-  .hero-stats { gap: 28px; }
   .services-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
