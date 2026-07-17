@@ -13,6 +13,12 @@
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes growLine { from { width: 0; opacity: 0; } to { width: 64px; opacity: 1; } }
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
 
 body {
   margin: 0;
@@ -69,14 +75,27 @@ a:hover { color: var(--blue-dark); }
 }
 .hero-top { animation: fadeUp 0.8s ease both; display: flex; flex-direction: column; align-items: center; }
 .eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 10px;
   background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
   color: #EAF3FF; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-  padding: 8px 18px; border-radius: 100px; margin-bottom: 32px;
+  padding: 8px 18px; border-radius: 100px; margin-bottom: 28px;
+}
+.eyebrow .pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; flex-shrink: 0;
+  animation: pulseDot 2s ease-out infinite;
 }
 .hero h1 {
-  font-size: 58px; line-height: 1.1; font-weight: 800; color: #FFFFFF;
-  margin: 0 0 26px; letter-spacing: -0.015em;
+  font-size: 58px; line-height: 1.15; font-weight: 800; color: #FFFFFF;
+  margin: 0 0 20px; letter-spacing: -0.015em;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+.hero h1 .accent { color: #8FC7FF; }
+.hero-accent-line {
+  width: 64px; height: 4px; border-radius: 4px; overflow: hidden;
+  background: linear-gradient(90deg, #2196F3, #8FC7FF);
+  margin: 0 0 28px;
+  animation: growLine 0.7s ease 0.3s both;
 }
 .hero p {
   font-size: 19px; line-height: 1.6; color: #D6E4F7; margin: 0 0 44px; max-width: 620px;
