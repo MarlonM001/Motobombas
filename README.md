@@ -1,2 +1,2 @@
-# Motobombas
+# Electrobombas
 Realizacion de proyecto 

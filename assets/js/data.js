@@ -13,9 +13,9 @@ const SERVICES = {
     ]
   },
   reparacion: {
-    title: 'Reparación de motobombas',
+    title: 'Reparación de electrobombas',
     desc: 'Diagnóstico y reparación de averías con repuestos originales.',
-    thumb: 'Foto: reparación de motobombas',
+    thumb: 'Foto: reparación de electrobombas',
     points: [
       'Diagnóstico de fallas eléctricas y mecánicas',
       'Reparación de motor y devanado',
@@ -62,7 +62,7 @@ const SERVICES = {
   },
   instalacion: {
     title: 'Instalación de equipos',
-    desc: 'Instalación profesional de motobombas nuevas, correctamente dimensionadas.',
+    desc: 'Instalación profesional de electrobombas nuevas, correctamente dimensionadas.',
     thumb: 'Foto: instalación de equipos',
     points: [
       'Cálculo de caudal y potencia requerida',
