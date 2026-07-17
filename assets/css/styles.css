@@ -163,7 +163,7 @@ a:hover { color: var(--blue-dark); }
 }
 .benefits-head h2 { font-size: 32px; font-weight: 800; color: #FFFFFF; margin: 0 0 12px; letter-spacing: -0.01em; }
 .benefits-head p { font-size: 16px; color: #C7DBF4; margin: 0; }
-.benefits-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .benefit {
   text-align: center;
   background: rgba(255,255,255,0.055);
