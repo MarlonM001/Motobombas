@@ -16,10 +16,11 @@
     <div class="navbar-inner">
       <a href="#" class="navbar-brand">
         <img class="logo-icon" src="assets/video/logo-icon.png" alt="AquaBomba">
-        <span>AquaBomba</span>
+        <span class="brand-name"><span class="brand-aqua">Aqua</span><span class="brand-bomba">Bomba</span></span>
       </a>
       <nav class="navbar-links">
         <a href="#servicios">Servicios</a>
+        <a href="#galeria">Trabajos</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -212,18 +213,29 @@
     <div class="services-grid" id="services-grid"></div>
   </section>
 
+  <!-- GALERÍA -->
+  <section class="gallery-section" id="galeria">
+    <div class="section-head reveal">
+      <div class="kicker">Trabajos realizados</div>
+      <h2>Galería de trabajos</h2>
+      <p>Evidencia real de instalaciones y mantenimientos entregados por servicio.</p>
+    </div>
+    <div id="gallery-groups"></div>
+  </section>
+
   <!-- MODAL -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-box" id="modal-box">
-      <div class="modal-head">
+      <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <div class="modal-scroll">
         <h3 id="modal-title"></h3>
-        <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">&times;</button>
+        <div class="modal-image" id="modal-image"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-includes">Incluye</div>
+        <div class="modal-points" id="modal-points"></div>
+        <a href="https://wa.me/573124432044" target="_blank" rel="noopener" class="modal-cta" id="modal-cta">Consultar por este servicio</a>
+        <button type="button" class="modal-gallery-link" id="modal-gallery-link">Ver trabajos relacionados</button>
       </div>
-      <div class="modal-image" id="modal-image"></div>
-      <p class="modal-desc" id="modal-desc"></p>
-      <div class="modal-includes">Incluye</div>
-      <div class="modal-points" id="modal-points"></div>
-      <a href="https://wa.me/573124432044" target="_blank" rel="noopener" class="modal-cta" id="modal-cta">Consultar por este servicio</a>
     </div>
   </div>
 
@@ -240,37 +252,37 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <div class="benefits-track" id="benefits-track">
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
             <div class="label">Atención rápida</div>
             <p class="desc">Coordinamos la visita técnica en menos de 24 horas.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
             <div class="label">Técnicos certificados</div>
             <p class="desc">Personal capacitado y con experiencia comprobada en electrobombas.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
             <div class="label">Garantía del servicio</div>
             <p class="desc">Todo trabajo realizado incluye garantía por escrito.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
             <div class="label">+10 años de experiencia</div>
             <p class="desc">Trayectoria comprobada en piscinas residenciales y comerciales.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
             <div class="label">Visión</div>
             <p class="desc">Ser la empresa de referencia en mantenimiento de electrobombas para piscinas en Colombia.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
             <div class="label">Misión</div>
             <p class="desc">Soluciones técnicas rápidas y confiables para mantener el sistema de bombeo de tu piscina funcionando de forma segura.</p>
           </div>
-          <div class="benefit reveal">
+          <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
             <div class="label">Valores</div>
             <p class="desc">Puntualidad, transparencia y repuestos originales en cada visita técnica, respaldados con garantía por escrito.</p>
@@ -350,7 +362,7 @@
         <div class="footer-col">
           <div class="footer-brand">
             <img class="logo-icon" src="assets/video/logo-icon.png" alt="AquaBomba">
-            <span>AquaBomba</span>
+            <span class="brand-name"><span class="brand-aqua">Aqua</span><span class="brand-bomba">Bomba</span></span>
           </div>
           <p>+10 años manteniendo el agua de piscinas residenciales y comerciales en perfecto estado, con técnicos certificados, repuestos originales y garantía por escrito en cada servicio.</p>
         </div>

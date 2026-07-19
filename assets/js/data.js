@@ -1,55 +1,20 @@
 // Contenido de cada servicio: tarjeta + modal de detalle.
 const SERVICES = {
-  preventivo: {
-    title: 'Mantenimiento preventivo',
-    desc: 'Revisiones periódicas que evitan fallas y prolongan la vida útil del equipo.',
-    thumb: 'Foto: mantenimiento preventivo',
+  mantenimiento: {
+    title: 'Mantenimiento Preventivo y Correctivo',
+    desc: 'Revisión periódica y reparación inmediata de tu equipo de bombeo, con repuestos originales.',
+    thumb: 'Foto: mantenimiento preventivo y correctivo',
     image: 'assets/video/preventivo.png',
+    thumbImage: 'assets/video/preventivo-thumb.png',
     points: [
-      'Inspección de motor, eje y acoples',
-      'Verificación de presión y caudal',
-      'Lubricación de partes móviles',
-      'Revisión de conexiones eléctricas',
-      'Informe técnico con recomendaciones'
-    ]
-  },
-  reparacion: {
-    title: 'Reparación de electrobombas',
-    desc: 'Diagnóstico y reparación de averías con repuestos originales.',
-    thumb: 'Foto: reparación de electrobombas',
-    image: 'assets/video/reparacion.png',
-    points: [
-      'Diagnóstico de fallas eléctricas y mecánicas',
-      'Reparación de motor y devanado',
-      'Sustitución de piezas dañadas',
-      'Pruebas de funcionamiento antes de entrega',
-      'Garantía por escrito del servicio'
-    ]
-  },
-  sellos: {
-    title: 'Cambio de sellos mecánicos',
-    desc: 'Reemplazo preciso para eliminar fugas y proteger el motor.',
-    thumb: 'Foto: cambio de sellos mecánicos',
-    image: 'assets/video/sellos.png',
-    points: [
-      'Identificación del sello adecuado por modelo',
-      'Desmontaje y limpieza de la cámara de sello',
-      'Instalación con alineación de precisión',
-      'Prueba de estanqueidad',
-      'Repuestos originales certificados'
-    ]
-  },
-  rodamientos: {
-    title: 'Cambio de rodamientos',
-    desc: 'Reducimos vibración y ruido restaurando el giro suave del motor.',
-    thumb: 'Foto: cambio de rodamientos',
-    image: 'assets/video/rodamientos.png',
-    points: [
-      'Diagnóstico de vibración y ruido anormal',
-      'Extracción de rodamientos desgastados',
-      'Montaje con herramienta de precisión',
-      'Balanceo del rotor',
-      'Prueba de temperatura y funcionamiento'
+      'Preventivo: inspección de motor, eje y acoples',
+      'Preventivo: verificación de presión y caudal',
+      'Preventivo: lubricación de partes móviles y revisión de conexiones eléctricas',
+      'Correctivo: diagnóstico y reparación de fallas eléctricas y mecánicas',
+      'Correctivo: sustitución de piezas dañadas con repuestos originales',
+      'Correctivo: cambio de sellos mecánicos (elimina fugas y protege el motor)',
+      'Correctivo: cambio de rodamientos con balanceo del rotor (reduce vibración y ruido)',
+      'Garantía por escrito en todo el servicio'
     ]
   },
   filtros: {
@@ -57,6 +22,7 @@ const SERVICES = {
     desc: 'Limpieza profunda para mantener la eficiencia de filtrado.',
     thumb: 'Foto: limpieza de filtros',
     image: 'assets/video/filtros.png',
+    thumbImage: 'assets/video/filtros-thumb.png',
     points: [
       'Retrolavado y limpieza de arena o cartucho',
       'Revisión de válvulas selectoras',
@@ -66,15 +32,18 @@ const SERVICES = {
     ]
   },
   instalacion: {
-    title: 'Instalación de equipos',
-    desc: 'Instalación profesional de electrobombas nuevas, correctamente dimensionadas.',
+    title: 'Instalación de Equipos y Sistemas Automatizados',
+    desc: 'Instalación profesional de electrobombas, tableros de control y sistemas automatizados, correctamente dimensionados para tu vivienda o negocio.',
     thumb: 'Foto: instalación de equipos',
     image: 'assets/video/instalacion.png',
+    thumbImage: 'assets/video/instalacion-thumb.png',
     points: [
-      'Cálculo de caudal y potencia requerida',
-      'Instalación de tuberías y conexiones',
+      'Cálculo de caudal, potencia y dimensionamiento del equipo',
+      'Instalación de tuberías, válvulas y conexiones hidráulicas',
+      'Instalación de tableros de control y sistemas automatizados',
+      'Instalación de sensores de nivel, presostatos y protecciones eléctricas',
       'Conexión eléctrica segura',
-      'Puesta en marcha y pruebas',
+      'Puesta en marcha, pruebas de funcionamiento y calibración',
       'Capacitación básica de uso al cliente'
     ]
   },
@@ -83,6 +52,7 @@ const SERVICES = {
     desc: 'Evaluación completa para identificar el origen exacto de la falla.',
     thumb: 'Foto: diagnóstico técnico',
     image: 'assets/video/diagnostico.png',
+    thumbImage: 'assets/video/diagnostico-thumb.png',
     points: [
       'Revisión eléctrica y mecánica completa',
       'Medición de consumo y presión',
@@ -90,5 +60,75 @@ const SERVICES = {
       'Cotización detallada de la reparación',
       'Reporte técnico con evidencia fotográfica'
     ]
+  },
+  hidroflomk: {
+    title: 'Sistema Hidroflo MK — Presión Automatizada',
+    desc: 'Sistema hidroneumático automatizado que entrega más presión de agua de forma constante, sin operar la bomba manualmente.',
+    thumb: 'Foto: sistema Hidroflo MK',
+    image: 'assets/video/SistemaHidroflo.png',
+    thumbImage: 'assets/video/SistemaHidroflo-thumb.png',
+    points: [
+      'Más presión y caudal constante en toda la vivienda o negocio',
+      'Encendido y apagado 100% automático por presión',
+      'Ideal para edificios, conjuntos residenciales y locales comerciales',
+      'Instalación, configuración y calibración del sistema',
+      'Mantenimiento y soporte técnico especializado'
+    ]
+  },
+  sumergibles: {
+    title: 'Bombas Sumergibles — Pozos Profundos y Aguas Negras',
+    desc: 'Venta, instalación y mantenimiento de bombas sumergibles tipo lapicero para pozos profundos y sistemas de aguas negras, además de sumergibles convencionales.',
+    thumb: 'Foto: bombas sumergibles tipo lapicero',
+    image: 'assets/video/BombasSumergibles.png',
+    thumbImage: 'assets/video/BombasSumergibles-thumb.png',
+    points: [
+      'Bombas sumergibles tipo lapicero para pozos profundos',
+      'Bombas sumergibles para aguas negras y aguas residuales',
+      'Cálculo de profundidad, caudal y potencia requerida',
+      'Instalación especializada en pozo o cárcamo',
+      'Mantenimiento, diagnóstico y reparación de sumergibles'
+    ]
   }
+};
+
+// Galería de trabajos realizados por servicio. Estructura lista para recibir
+// fotos reales: agregar objetos { src: 'assets/gallery/archivo.jpg', alt: '...' }
+// al arreglo del servicio correspondiente cuando estén disponibles.
+const GALLERY = {
+  mantenimiento: [
+    { src: 'assets/gallery/MantenimientoPreventivo1.jpg', alt: 'Mantenimiento preventivo de electrobomba 1' },
+    { src: 'assets/gallery/MantenimientoPreventivo2.jpg', alt: 'Mantenimiento preventivo de electrobomba 2' },
+    { src: 'assets/gallery/MantenimientoPreventivo3.jpg', alt: 'Mantenimiento preventivo de electrobomba 3' },
+    { src: 'assets/gallery/MantenimientoPreventivo4.jpg', alt: 'Mantenimiento preventivo de electrobomba 4' }
+  ],
+  filtros: [
+    { src: 'assets/gallery/Limpiezafiltros1.jpg', alt: 'Limpieza de filtros 1' },
+    { src: 'assets/gallery/Limpiezafiltros2.jpg', alt: 'Limpieza de filtros 2' },
+    { src: 'assets/gallery/Limpiezafiltros3.jpg', alt: 'Limpieza de filtros 3' },
+    { src: 'assets/gallery/Limpiezafiltros4.jpg', alt: 'Limpieza de filtros 4' }
+  ],
+  instalacion: [
+    { src: 'assets/gallery/InstalacionEquipos1.jpg', alt: 'Instalación de equipos 1' },
+    { src: 'assets/gallery/InstalacionEquipos2.jpg', alt: 'Instalación de equipos 2' },
+    { src: 'assets/gallery/InstalacionEquipos3.jpg', alt: 'Instalación de equipos 3' },
+    { src: 'assets/gallery/InstalacionEquipos4.jpg', alt: 'Instalación de equipos 4' }
+  ],
+  diagnostico: [
+    { src: 'assets/gallery/DiagnosticoTecnico1.jpg', alt: 'Diagnóstico técnico 1' },
+    { src: 'assets/gallery/DiagnosticoTecnico2.jpg', alt: 'Diagnóstico técnico 2' },
+    { src: 'assets/gallery/DiagnosticoTecnico3.jpg', alt: 'Diagnóstico técnico 3' },
+    { src: 'assets/gallery/DiagnosticoTecnico4.jpg', alt: 'Diagnóstico técnico 4' }
+  ],
+  hidroflomk: [
+    { src: 'assets/gallery/SistemaHidroflo1.jpg', alt: 'Sistema Hidroflo MK 1' },
+    { src: 'assets/gallery/SistemaHidroflo2.jpg', alt: 'Sistema Hidroflo MK 2' },
+    { src: 'assets/gallery/SistemaHidroflo3.jpg', alt: 'Sistema Hidroflo MK 3' },
+    { src: 'assets/gallery/SistemaHidroflo4.jpg', alt: 'Sistema Hidroflo MK 4' }
+  ],
+  sumergibles: [
+    { src: 'assets/gallery/BombasSumergibles1.jpg', alt: 'Bombas sumergibles tipo lapicero 1' },
+    { src: 'assets/gallery/BombasSumergibles2.jpg', alt: 'Bombas sumergibles tipo lapicero 2' },
+    { src: 'assets/gallery/BombasSumergibles3.jpg', alt: 'Bombas sumergibles tipo lapicero 3' },
+    { src: 'assets/gallery/BombasSumergibles4.jpg', alt: 'Bombas sumergibles tipo lapicero 4' }
+  ]
 };

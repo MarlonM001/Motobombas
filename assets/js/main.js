@@ -6,22 +6,25 @@ const PHOTO_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
 
 const grid = document.getElementById('services-grid');
 const footerServices = document.getElementById('footer-services');
+const galleryWrap = document.getElementById('gallery-groups');
 const overlay = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
 const modalImage = document.getElementById('modal-image');
 const modalDesc = document.getElementById('modal-desc');
 const modalPoints = document.getElementById('modal-points');
 const modalCta = document.getElementById('modal-cta');
+const modalGalleryLink = document.getElementById('modal-gallery-link');
 const WHATSAPP_NUMBER = '573124432044';
 
 function renderServices() {
-  Object.keys(SERVICES).forEach((key, i) => {
+  Object.keys(SERVICES).forEach((key) => {
     const s = SERVICES[key];
 
     const card = document.createElement('button');
     card.className = 'service-card reveal';
-    const thumbContent = s.image
-      ? `<img src="${s.image}" alt="${s.title}" loading="lazy">`
+    const thumbSrc = s.thumbImage || s.image;
+    const thumbContent = thumbSrc
+      ? `<img src="${thumbSrc}" alt="${s.title}" loading="lazy">`
       : `<div class="img-placeholder">${PHOTO_ICON}${s.thumb}</div>`;
     card.innerHTML = `
       <div class="thumb">${thumbContent}</div>
@@ -39,6 +42,92 @@ function renderServices() {
   });
 }
 
+function renderGallery() {
+  if (!galleryWrap) return;
+  Object.keys(SERVICES).forEach((key) => {
+    const s = SERVICES[key];
+    const photos = GALLERY[key] || [];
+
+    const group = document.createElement('div');
+    group.className = 'gallery-group reveal';
+    group.id = `galeria-${key}`;
+
+    const photosHtml = photos.length
+      ? `<div class="gallery-carousel">
+          <button type="button" class="gallery-arrow prev" aria-label="Foto anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B4F9C" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="gallery-track">
+            ${photos.map((p) => `<div class="gallery-slide"><div class="gallery-photo"><img src="${p.src}" alt="${p.alt || s.title}" loading="lazy"></div></div>`).join('')}
+          </div>
+          <button type="button" class="gallery-arrow next" aria-label="Foto siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B4F9C" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="gallery-dots"></div>`
+      : `<div class="gallery-empty">
+          ${PHOTO_ICON}
+          <p>Estamos organizando las fotos de este servicio. Escríbenos por WhatsApp y con gusto te mostramos evidencia de trabajos ya realizados.</p>
+          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, quiero ver trabajos realizados del servicio de ${s.title}.`)}" target="_blank" rel="noopener" class="gallery-empty-cta">Pedir evidencia por WhatsApp</a>
+        </div>`;
+
+    group.innerHTML = `<h3>${s.title}</h3>${photosHtml}`;
+    galleryWrap.appendChild(group);
+  });
+  initGalleryCarousels();
+}
+
+function initGalleryCarousels() {
+  document.querySelectorAll('.gallery-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.gallery-track');
+    const prevBtn = carousel.querySelector('.gallery-arrow.prev');
+    const nextBtn = carousel.querySelector('.gallery-arrow.next');
+    const dotsWrap = carousel.parentElement.querySelector('.gallery-dots');
+    const slides = Array.from(track.children);
+    if (!slides.length) return;
+
+    const dots = slides.map((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'gallery-dot';
+      dot.setAttribute('aria-label', `Ir a la foto ${i + 1}`);
+      dot.addEventListener('click', () => {
+        track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const setActiveDot = () => {
+      const trackLeft = track.getBoundingClientRect().left;
+      let closest = 0;
+      let closestDist = Infinity;
+      slides.forEach((slide, i) => {
+        const dist = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+    };
+
+    let ticking = false;
+    track.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => { setActiveDot(); ticking = false; });
+      }
+    }, { passive: true });
+
+    const scrollByStep = (dir) => {
+      const step = slides[0].getBoundingClientRect().width + 12;
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+    };
+    prevBtn.addEventListener('click', () => scrollByStep(-1));
+    nextBtn.addEventListener('click', () => scrollByStep(1));
+
+    setActiveDot();
+  });
+}
+
 function openModal(key) {
   const s = SERVICES[key];
   modalTitle.textContent = s.title;
@@ -49,6 +138,7 @@ function openModal(key) {
   modalPoints.innerHTML = s.points.map(p => `<div class="modal-point">${CHECK_ICON}<span>${p}</span></div>`).join('');
   const message = `Hola, quiero información sobre el servicio de ${s.title}.`;
   modalCta.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  if (modalGalleryLink) modalGalleryLink.dataset.key = key;
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -63,6 +153,17 @@ function initModalControls() {
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
   document.getElementById('modal-box').addEventListener('click', (e) => e.stopPropagation());
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  if (modalGalleryLink) {
+    modalGalleryLink.addEventListener('click', () => {
+      const key = modalGalleryLink.dataset.key;
+      closeModal();
+      const target = document.getElementById(`galeria-${key}`);
+      if (target) {
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 250);
+      }
+    });
+  }
 }
 
 function initScrollReveal() {
@@ -253,6 +354,7 @@ function initHeroSlider() {
 }
 
 renderServices();
+renderGallery();
 initModalControls();
 initScrollReveal();
 initGateEffect();
