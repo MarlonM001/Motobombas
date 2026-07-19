@@ -15,8 +15,8 @@
   <header class="navbar">
     <div class="navbar-inner">
       <a href="#" class="navbar-brand">
-        <div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.1-3.1a4 4 0 01-5.3 5.3l-6.4 6.4a2 2 0 01-2.8-2.8l6.4-6.4a4 4 0 015.3-5.3l-3.1 3.1z"/></svg></div>
-        <span>TECNICOMANUEL</span>
+        <img class="logo-icon" src="assets/video/logo-icon.png" alt="AquaBomba">
+        <span>AquaBomba</span>
       </a>
       <nav class="navbar-links">
         <a href="#servicios">Servicios</a>
@@ -85,13 +85,88 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="assets/video/piscina.png" alt="Técnico de AquaBomba dando mantenimiento a una electrobomba de piscina">
+        <img class="hero-slide active" src="assets/video/piscina.png" alt="Técnico de AquaBomba dando mantenimiento a una electrobomba de piscina">
+        <img class="hero-slide" src="assets/video/piscinauno.png" alt="Agua cristalina gracias a un sistema de bombeo profesional">
+        <img class="hero-slide" src="assets/video/piscinados.png" alt="Diagnóstico preciso y reparación garantizada">
+        <button class="hero-slider-arrow prev" id="hero-prev" aria-label="Imagen anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="hero-slider-arrow next" id="hero-next" aria-label="Siguiente imagen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="hero-slider-dots" id="hero-dots"></div>
       </div>
     </div>
   </section>
 
   <!-- SERVICIOS -->
   <section class="services-section" id="servicios">
+    <div class="gate-overlay" aria-hidden="true">
+      <div class="gate-panel gate-left">
+        <svg class="wave-shape-back" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradBackL" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8FC7FF"/>
+              <stop offset="100%" stop-color="#1a4d8f"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#waveGradBackL)" d="M0,0 L72.0,0.0 L74.66,7.14 L77.25,14.29 L79.72,21.43 L81.99,28.57 L84.02,35.71 L85.75,42.86 L87.15,50.0 L88.17,57.14 L88.79,64.29 L89.0,71.43 L88.79,78.57 L88.17,85.71 L87.15,92.86 L85.75,100.0 L84.02,107.14 L81.99,114.29 L79.72,121.43 L77.25,128.57 L74.66,135.71 L72.0,142.86 L69.34,150.0 L66.75,157.14 L64.28,164.29 L62.01,171.43 L59.98,178.57 L58.25,185.71 L56.85,192.86 L55.83,200.0 L55.21,207.14 L55.0,214.29 L55.21,221.43 L55.83,228.57 L56.85,235.71 L58.25,242.86 L59.98,250.0 L62.01,257.14 L64.28,264.29 L66.75,271.43 L69.34,278.57 L72.0,285.71 L74.66,292.86 L77.25,300.0 L79.72,307.14 L81.99,314.29 L84.02,321.43 L85.75,328.57 L87.15,335.71 L88.17,342.86 L88.79,350.0 L89.0,357.14 L88.79,364.29 L88.17,371.43 L87.15,378.57 L85.75,385.71 L84.02,392.86 L81.99,400.0 L79.72,407.14 L77.25,414.29 L74.66,421.43 L72.0,428.57 L69.34,435.71 L66.75,442.86 L64.28,450.0 L62.01,457.14 L59.98,464.29 L58.25,471.43 L56.85,478.57 L55.83,485.71 L55.21,492.86 L55.0,500.0 L55.21,507.14 L55.83,514.29 L56.85,521.43 L58.25,528.57 L59.98,535.71 L62.01,542.86 L64.28,550.0 L66.75,557.14 L69.34,564.29 L72.0,571.43 L74.66,578.57 L77.25,585.71 L79.72,592.86 L81.99,600.0 L84.02,607.14 L85.75,614.29 L87.15,621.43 L88.17,628.57 L88.79,635.71 L89.0,642.86 L88.79,650.0 L88.17,657.14 L87.15,664.29 L85.75,671.43 L84.02,678.57 L81.99,685.71 L79.72,692.86 L77.25,700.0 L74.66,707.14 L72.0,714.29 L69.34,721.43 L66.75,728.57 L64.28,735.71 L62.01,742.86 L59.98,750.0 L58.25,757.14 L56.85,764.29 L55.83,771.43 L55.21,778.57 L55.0,785.71 L55.21,792.86 L55.83,800.0 L56.85,807.14 L58.25,814.29 L59.98,821.43 L62.01,828.57 L64.28,835.71 L66.75,842.86 L69.34,850.0 L72.0,857.14 L74.66,864.29 L77.25,871.43 L79.72,878.57 L81.99,885.71 L84.02,892.86 L85.75,900.0 L87.15,907.14 L88.17,914.29 L88.79,921.43 L89.0,928.57 L88.79,935.71 L88.17,942.86 L87.15,950.0 L85.75,957.14 L84.02,964.29 L81.99,971.43 L79.72,978.57 L77.25,985.71 L74.66,992.86 L72.0,1000.0 L0,1000 Z"/>
+        </svg>
+        <svg class="wave-shape" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradL" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2196F3"/>
+              <stop offset="55%" stop-color="#0d3a75"/>
+              <stop offset="100%" stop-color="#0a2c58"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#waveGradL)" stroke="rgba(180,220,255,0.5)" stroke-width="1.2" vector-effect="non-scaling-stroke" d="M0,0 L86.0,0.0 L87.72,5.0 L89.4,10.0 L90.99,15.0 L92.47,20.0 L93.78,25.0 L94.9,30.0 L95.8,35.0 L96.46,40.0 L96.86,45.0 L97.0,50.0 L96.86,55.0 L96.46,60.0 L95.8,65.0 L94.9,70.0 L93.78,75.0 L92.47,80.0 L90.99,85.0 L89.4,90.0 L87.72,95.0 L86.0,100.0 L84.28,105.0 L82.6,110.0 L81.01,115.0 L79.53,120.0 L78.22,125.0 L77.1,130.0 L76.2,135.0 L75.54,140.0 L75.14,145.0 L75.0,150.0 L75.14,155.0 L75.54,160.0 L76.2,165.0 L77.1,170.0 L78.22,175.0 L79.53,180.0 L81.01,185.0 L82.6,190.0 L84.28,195.0 L86.0,200.0 L87.72,205.0 L89.4,210.0 L90.99,215.0 L92.47,220.0 L93.78,225.0 L94.9,230.0 L95.8,235.0 L96.46,240.0 L96.86,245.0 L97.0,250.0 L96.86,255.0 L96.46,260.0 L95.8,265.0 L94.9,270.0 L93.78,275.0 L92.47,280.0 L90.99,285.0 L89.4,290.0 L87.72,295.0 L86.0,300.0 L84.28,305.0 L82.6,310.0 L81.01,315.0 L79.53,320.0 L78.22,325.0 L77.1,330.0 L76.2,335.0 L75.54,340.0 L75.14,345.0 L75.0,350.0 L75.14,355.0 L75.54,360.0 L76.2,365.0 L77.1,370.0 L78.22,375.0 L79.53,380.0 L81.01,385.0 L82.6,390.0 L84.28,395.0 L86.0,400.0 L87.72,405.0 L89.4,410.0 L90.99,415.0 L92.47,420.0 L93.78,425.0 L94.9,430.0 L95.8,435.0 L96.46,440.0 L96.86,445.0 L97.0,450.0 L96.86,455.0 L96.46,460.0 L95.8,465.0 L94.9,470.0 L93.78,475.0 L92.47,480.0 L90.99,485.0 L89.4,490.0 L87.72,495.0 L86.0,500.0 L84.28,505.0 L82.6,510.0 L81.01,515.0 L79.53,520.0 L78.22,525.0 L77.1,530.0 L76.2,535.0 L75.54,540.0 L75.14,545.0 L75.0,550.0 L75.14,555.0 L75.54,560.0 L76.2,565.0 L77.1,570.0 L78.22,575.0 L79.53,580.0 L81.01,585.0 L82.6,590.0 L84.28,595.0 L86.0,600.0 L87.72,605.0 L89.4,610.0 L90.99,615.0 L92.47,620.0 L93.78,625.0 L94.9,630.0 L95.8,635.0 L96.46,640.0 L96.86,645.0 L97.0,650.0 L96.86,655.0 L96.46,660.0 L95.8,665.0 L94.9,670.0 L93.78,675.0 L92.47,680.0 L90.99,685.0 L89.4,690.0 L87.72,695.0 L86.0,700.0 L84.28,705.0 L82.6,710.0 L81.01,715.0 L79.53,720.0 L78.22,725.0 L77.1,730.0 L76.2,735.0 L75.54,740.0 L75.14,745.0 L75.0,750.0 L75.14,755.0 L75.54,760.0 L76.2,765.0 L77.1,770.0 L78.22,775.0 L79.53,780.0 L81.01,785.0 L82.6,790.0 L84.28,795.0 L86.0,800.0 L87.72,805.0 L89.4,810.0 L90.99,815.0 L92.47,820.0 L93.78,825.0 L94.9,830.0 L95.8,835.0 L96.46,840.0 L96.86,845.0 L97.0,850.0 L96.86,855.0 L96.46,860.0 L95.8,865.0 L94.9,870.0 L93.78,875.0 L92.47,880.0 L90.99,885.0 L89.4,890.0 L87.72,895.0 L86.0,900.0 L84.28,905.0 L82.6,910.0 L81.01,915.0 L79.53,920.0 L78.22,925.0 L77.1,930.0 L76.2,935.0 L75.54,940.0 L75.14,945.0 L75.0,950.0 L75.14,955.0 L75.54,960.0 L76.2,965.0 L77.1,970.0 L78.22,975.0 L79.53,980.0 L81.01,985.0 L82.6,990.0 L84.28,995.0 L86.0,1000.0 L0,1000 Z"/>
+        </svg>
+        <svg class="droplet gate-droplet-1" viewBox="0 0 24 24" fill="rgba(255,255,255,0.14)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-2" viewBox="0 0 24 24" fill="rgba(255,255,255,0.16)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-3" viewBox="0 0 24 24" fill="rgba(255,255,255,0.13)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-4" viewBox="0 0 24 24" fill="rgba(255,255,255,0.15)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <span class="bubble gate-bubble-1"></span>
+        <span class="bubble gate-bubble-2"></span>
+      </div>
+      <div class="gate-panel gate-right">
+        <svg class="wave-shape-back" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradBackR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8FC7FF"/>
+              <stop offset="100%" stop-color="#1a4d8f"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#waveGradBackR)" d="M100,0 L28.0,0.0 L30.66,7.14 L33.25,14.29 L35.72,21.43 L37.99,28.57 L40.02,35.71 L41.75,42.86 L43.15,50.0 L44.17,57.14 L44.79,64.29 L45.0,71.43 L44.79,78.57 L44.17,85.71 L43.15,92.86 L41.75,100.0 L40.02,107.14 L37.99,114.29 L35.72,121.43 L33.25,128.57 L30.66,135.71 L28.0,142.86 L25.34,150.0 L22.75,157.14 L20.28,164.29 L18.01,171.43 L15.98,178.57 L14.25,185.71 L12.85,192.86 L11.83,200.0 L11.21,207.14 L11.0,214.29 L11.21,221.43 L11.83,228.57 L12.85,235.71 L14.25,242.86 L15.98,250.0 L18.01,257.14 L20.28,264.29 L22.75,271.43 L25.34,278.57 L28.0,285.71 L30.66,292.86 L33.25,300.0 L35.72,307.14 L37.99,314.29 L40.02,321.43 L41.75,328.57 L43.15,335.71 L44.17,342.86 L44.79,350.0 L45.0,357.14 L44.79,364.29 L44.17,371.43 L43.15,378.57 L41.75,385.71 L40.02,392.86 L37.99,400.0 L35.72,407.14 L33.25,414.29 L30.66,421.43 L28.0,428.57 L25.34,435.71 L22.75,442.86 L20.28,450.0 L18.01,457.14 L15.98,464.29 L14.25,471.43 L12.85,478.57 L11.83,485.71 L11.21,492.86 L11.0,500.0 L11.21,507.14 L11.83,514.29 L12.85,521.43 L14.25,528.57 L15.98,535.71 L18.01,542.86 L20.28,550.0 L22.75,557.14 L25.34,564.29 L28.0,571.43 L30.66,578.57 L33.25,585.71 L35.72,592.86 L37.99,600.0 L40.02,607.14 L41.75,614.29 L43.15,621.43 L44.17,628.57 L44.79,635.71 L45.0,642.86 L44.79,650.0 L44.17,657.14 L43.15,664.29 L41.75,671.43 L40.02,678.57 L37.99,685.71 L35.72,692.86 L33.25,700.0 L30.66,707.14 L28.0,714.29 L25.34,721.43 L22.75,728.57 L20.28,735.71 L18.01,742.86 L15.98,750.0 L14.25,757.14 L12.85,764.29 L11.83,771.43 L11.21,778.57 L11.0,785.71 L11.21,792.86 L11.83,800.0 L12.85,807.14 L14.25,814.29 L15.98,821.43 L18.01,828.57 L20.28,835.71 L22.75,842.86 L25.34,850.0 L28.0,857.14 L30.66,864.29 L33.25,871.43 L35.72,878.57 L37.99,885.71 L40.02,892.86 L41.75,900.0 L43.15,907.14 L44.17,914.29 L44.79,921.43 L45.0,928.57 L44.79,935.71 L44.17,942.86 L43.15,950.0 L41.75,957.14 L40.02,964.29 L37.99,971.43 L35.72,978.57 L33.25,985.71 L30.66,992.86 L28.0,1000.0 L100,1000 Z"/>
+        </svg>
+        <svg class="wave-shape" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2196F3"/>
+              <stop offset="55%" stop-color="#0d3a75"/>
+              <stop offset="100%" stop-color="#0a2c58"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#waveGradR)" stroke="rgba(180,220,255,0.5)" stroke-width="1.2" vector-effect="non-scaling-stroke" d="M100,0 L14.0,0.0 L15.72,5.0 L17.4,10.0 L18.99,15.0 L20.47,20.0 L21.78,25.0 L22.9,30.0 L23.8,35.0 L24.46,40.0 L24.86,45.0 L25.0,50.0 L24.86,55.0 L24.46,60.0 L23.8,65.0 L22.9,70.0 L21.78,75.0 L20.47,80.0 L18.99,85.0 L17.4,90.0 L15.72,95.0 L14.0,100.0 L12.28,105.0 L10.6,110.0 L9.01,115.0 L7.53,120.0 L6.22,125.0 L5.1,130.0 L4.2,135.0 L3.54,140.0 L3.14,145.0 L3.0,150.0 L3.14,155.0 L3.54,160.0 L4.2,165.0 L5.1,170.0 L6.22,175.0 L7.53,180.0 L9.01,185.0 L10.6,190.0 L12.28,195.0 L14.0,200.0 L15.72,205.0 L17.4,210.0 L18.99,215.0 L20.47,220.0 L21.78,225.0 L22.9,230.0 L23.8,235.0 L24.46,240.0 L24.86,245.0 L25.0,250.0 L24.86,255.0 L24.46,260.0 L23.8,265.0 L22.9,270.0 L21.78,275.0 L20.47,280.0 L18.99,285.0 L17.4,290.0 L15.72,295.0 L14.0,300.0 L12.28,305.0 L10.6,310.0 L9.01,315.0 L7.53,320.0 L6.22,325.0 L5.1,330.0 L4.2,335.0 L3.54,340.0 L3.14,345.0 L3.0,350.0 L3.14,355.0 L3.54,360.0 L4.2,365.0 L5.1,370.0 L6.22,375.0 L7.53,380.0 L9.01,385.0 L10.6,390.0 L12.28,395.0 L14.0,400.0 L15.72,405.0 L17.4,410.0 L18.99,415.0 L20.47,420.0 L21.78,425.0 L22.9,430.0 L23.8,435.0 L24.46,440.0 L24.86,445.0 L25.0,450.0 L24.86,455.0 L24.46,460.0 L23.8,465.0 L22.9,470.0 L21.78,475.0 L20.47,480.0 L18.99,485.0 L17.4,490.0 L15.72,495.0 L14.0,500.0 L12.28,505.0 L10.6,510.0 L9.01,515.0 L7.53,520.0 L6.22,525.0 L5.1,530.0 L4.2,535.0 L3.54,540.0 L3.14,545.0 L3.0,550.0 L3.14,555.0 L3.54,560.0 L4.2,565.0 L5.1,570.0 L6.22,575.0 L7.53,580.0 L9.01,585.0 L10.6,590.0 L12.28,595.0 L14.0,600.0 L15.72,605.0 L17.4,610.0 L18.99,615.0 L20.47,620.0 L21.78,625.0 L22.9,630.0 L23.8,635.0 L24.46,640.0 L24.86,645.0 L25.0,650.0 L24.86,655.0 L24.46,660.0 L23.8,665.0 L22.9,670.0 L21.78,675.0 L20.47,680.0 L18.99,685.0 L17.4,690.0 L15.72,695.0 L14.0,700.0 L12.28,705.0 L10.6,710.0 L9.01,715.0 L7.53,720.0 L6.22,725.0 L5.1,730.0 L4.2,735.0 L3.54,740.0 L3.14,745.0 L3.0,750.0 L3.14,755.0 L3.54,760.0 L4.2,765.0 L5.1,770.0 L6.22,775.0 L7.53,780.0 L9.01,785.0 L10.6,790.0 L12.28,795.0 L14.0,800.0 L15.72,805.0 L17.4,810.0 L18.99,815.0 L20.47,820.0 L21.78,825.0 L22.9,830.0 L23.8,835.0 L24.46,840.0 L24.86,845.0 L25.0,850.0 L24.86,855.0 L24.46,860.0 L23.8,865.0 L22.9,870.0 L21.78,875.0 L20.47,880.0 L18.99,885.0 L17.4,890.0 L15.72,895.0 L14.0,900.0 L12.28,905.0 L10.6,910.0 L9.01,915.0 L7.53,920.0 L6.22,925.0 L5.1,930.0 L4.2,935.0 L3.54,940.0 L3.14,945.0 L3.0,950.0 L3.14,955.0 L3.54,960.0 L4.2,965.0 L5.1,970.0 L6.22,975.0 L7.53,980.0 L9.01,985.0 L10.6,990.0 L12.28,995.0 L14.0,1000.0 L100,1000 Z"/>
+        </svg>
+        <svg class="droplet gate-droplet-5" viewBox="0 0 24 24" fill="rgba(255,255,255,0.14)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-6" viewBox="0 0 24 24" fill="rgba(255,255,255,0.16)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-7" viewBox="0 0 24 24" fill="rgba(255,255,255,0.13)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <svg class="droplet gate-droplet-8" viewBox="0 0 24 24" fill="rgba(255,255,255,0.15)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        <span class="bubble gate-bubble-3"></span>
+        <span class="bubble gate-bubble-4"></span>
+      </div>
+      <div class="gate-splash" aria-hidden="true">
+        <span class="splash-drop sd-1"></span>
+        <span class="splash-drop sd-2"></span>
+        <span class="splash-drop sd-3"></span>
+        <span class="splash-drop sd-4"></span>
+        <span class="splash-drop sd-5"></span>
+        <span class="splash-drop sd-6"></span>
+        <span class="splash-drop sd-7"></span>
+        <span class="splash-drop sd-8"></span>
+      </div>
+    </div>
     <div class="section-head reveal">
       <div class="kicker">Servicios</div>
       <h2>Todo lo que tu equipo de bombeo necesita</h2>
@@ -123,55 +198,122 @@
         <h2>¿Por qué elegirnos?</h2>
         <p>La confianza de quienes cuidan su piscina como nosotros.</p>
       </div>
-      <div class="benefits-grid">
-        <div class="benefit reveal">
-          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
-          <div class="label">Atención rápida</div>
-          <p class="desc">Coordinamos la visita técnica en menos de 24 horas.</p>
+      <div class="benefits-carousel">
+        <button class="carousel-arrow prev" id="benefits-prev" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="benefits-track" id="benefits-track">
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+            <div class="label">Atención rápida</div>
+            <p class="desc">Coordinamos la visita técnica en menos de 24 horas.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+            <div class="label">Técnicos certificados</div>
+            <p class="desc">Personal capacitado y con experiencia comprobada en electrobombas.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
+            <div class="label">Garantía del servicio</div>
+            <p class="desc">Todo trabajo realizado incluye garantía por escrito.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div class="label">+10 años de experiencia</div>
+            <p class="desc">Trayectoria comprobada en piscinas residenciales y comerciales.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="label">Visión</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Visión.]</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+            <div class="label">Misión</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Misión.]</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+            <div class="label">Valores</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Valores.]</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+            <div class="label">Atención rápida</div>
+            <p class="desc">Coordinamos la visita técnica en menos de 24 horas.</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+            <div class="label">Técnicos certificados</div>
+            <p class="desc">Personal capacitado y con experiencia comprobada en electrobombas.</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
+            <div class="label">Garantía del servicio</div>
+            <p class="desc">Todo trabajo realizado incluye garantía por escrito.</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div class="label">+10 años de experiencia</div>
+            <p class="desc">Trayectoria comprobada en piscinas residenciales y comerciales.</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="label">Visión</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Visión.]</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+            <div class="label">Misión</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Misión.]</p>
+          </div>
+          <div class="benefit" data-clone="true" aria-hidden="true" tabindex="-1">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+            <div class="label">Valores</div>
+            <p class="desc">[Pendiente: pega aquí el texto de Valores.]</p>
+          </div>
         </div>
-        <div class="benefit reveal">
-          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
-          <div class="label">Técnicos certificados</div>
-          <p class="desc">Personal capacitado y con experiencia comprobada en electrobombas.</p>
-        </div>
-        <div class="benefit reveal">
-          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div class="label">Garantía del servicio</div>
-          <p class="desc">Todo trabajo realizado incluye garantía por escrito.</p>
-        </div>
-        <div class="benefit reveal">
-          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
-          <div class="label">+10 años de experiencia</div>
-          <p class="desc">Trayectoria comprobada en piscinas residenciales y comerciales.</p>
-        </div>
+        <button class="carousel-arrow next" id="benefits-next" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
+      <div class="carousel-dots" id="benefits-dots"></div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer id="contacto">
     <div class="footer-decor" aria-hidden="true">
-      <svg class="droplet footer-droplet-1" viewBox="0 0 24 24" fill="rgba(255,255,255,0.10)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.12)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-3 tier-2" viewBox="0 0 24 24" fill="rgba(255,255,255,0.09)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-4 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.11)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-5" viewBox="0 0 24 24" fill="rgba(255,255,255,0.10)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-6" viewBox="0 0 24 24" fill="rgba(255,255,255,0.09)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-7 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.10)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
-      <svg class="droplet footer-droplet-8 tier-3" viewBox="0 0 24 24" fill="rgba(255,255,255,0.08)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-1" viewBox="0 0 24 24" fill="rgba(255,255,255,0.24)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.26)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-3 tier-2" viewBox="0 0 24 24" fill="rgba(255,255,255,0.20)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-4 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.24)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-5" viewBox="0 0 24 24" fill="rgba(255,255,255,0.22)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-6" viewBox="0 0 24 24" fill="rgba(255,255,255,0.20)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-7 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.22)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-8 tier-3" viewBox="0 0 24 24" fill="rgba(255,255,255,0.18)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-9" viewBox="0 0 24 24" fill="rgba(143,199,255,0.24)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-10 tier-2" viewBox="0 0 24 24" fill="rgba(255,255,255,0.22)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-11 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.20)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-12 tier-3" viewBox="0 0 24 24" fill="rgba(255,255,255,0.19)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet footer-droplet-13 tier-3" viewBox="0 0 24 24" fill="rgba(143,199,255,0.21)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
       <span class="bubble footer-bubble-1"></span>
       <span class="bubble footer-bubble-2"></span>
       <span class="bubble footer-bubble-3 tier-2"></span>
       <span class="bubble footer-bubble-4 tier-2"></span>
       <span class="bubble footer-bubble-5 tier-3"></span>
+      <span class="bubble footer-bubble-6"></span>
+      <span class="bubble footer-bubble-7 tier-2"></span>
+      <span class="bubble footer-bubble-8 tier-3"></span>
     </div>
     <div class="footer-inner reveal">
       <div class="footer-grid">
 
         <div class="footer-col">
           <div class="footer-brand">
-            <div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.1-3.1a4 4 0 01-5.3 5.3l-6.4 6.4a2 2 0 01-2.8-2.8l6.4-6.4a4 4 0 015.3-5.3l-3.1 3.1z"/></svg></div>
-            <span>TECNICOMANUEL</span>
+            <img class="logo-icon" src="assets/video/logo-icon.png" alt="AquaBomba">
+            <span>AquaBomba</span>
           </div>
           <p>Mantenimiento, reparación e instalación de electrobombas para piscinas residenciales y comerciales.</p>
         </div>
@@ -200,7 +342,7 @@
         </div>
 
       </div>
-      <div class="footer-bottom">© 2026 TECNICOMANUEL. Todos los derechos reservados.</div>
+      <div class="footer-bottom">© 2026 AquaBomba. Todos los derechos reservados.</div>
     </div>
   </footer>
 
