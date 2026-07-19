@@ -331,8 +331,34 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
+  <section class="contact-section" id="contacto">
+    <div class="section-head reveal">
+      <div class="kicker">Contacto</div>
+      <h2>Cuéntanos qué necesitas</h2>
+      <p>Completa el formulario y te escribimos por WhatsApp con la información lista.</p>
+    </div>
+    <form class="contact-form reveal" id="contact-form">
+      <div class="form-row">
+        <label for="cf-nombre">Nombre</label>
+        <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-row">
+        <label for="cf-servicio">Servicio de interés</label>
+        <select id="cf-servicio" name="servicio" required>
+          <option value="">Selecciona un servicio</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="cf-detalle">Cuéntanos brevemente qué necesitas</label>
+        <textarea id="cf-detalle" name="detalle" rows="3" placeholder="Ej: la bomba de la piscina no enciende, hace ruido, necesito instalar un pozo profundo..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary contact-form-submit">Enviar por WhatsApp</button>
+    </form>
+  </section>
+
   <!-- FOOTER -->
-  <footer id="contacto">
+  <footer>
     <div class="footer-decor" aria-hidden="true">
       <svg class="droplet footer-droplet-1" viewBox="0 0 24 24" fill="rgba(255,255,255,0.24)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
       <svg class="droplet footer-droplet-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.26)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
