@@ -217,6 +217,7 @@ function initBenefitsCarousel() {
 
 function initHeroSlider() {
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  const texts = Array.from(document.querySelectorAll('.hero-text-slide'));
   const prevBtn = document.getElementById('hero-prev');
   const nextBtn = document.getElementById('hero-next');
   const dotsWrap = document.getElementById('hero-dots');
@@ -236,6 +237,7 @@ function initHeroSlider() {
 
   function render() {
     slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    texts.forEach((t, i) => t.classList.toggle('active', i === index));
     dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
 
