@@ -4,6 +4,7 @@ const SERVICES = {
     title: 'Mantenimiento preventivo',
     desc: 'Revisiones periódicas que evitan fallas y prolongan la vida útil del equipo.',
     thumb: 'Foto: mantenimiento preventivo',
+    image: 'assets/video/preventivo.png',
     points: [
       'Inspección de motor, eje y acoples',
       'Verificación de presión y caudal',
@@ -16,6 +17,7 @@ const SERVICES = {
     title: 'Reparación de electrobombas',
     desc: 'Diagnóstico y reparación de averías con repuestos originales.',
     thumb: 'Foto: reparación de electrobombas',
+    image: 'assets/video/reparacion.png',
     points: [
       'Diagnóstico de fallas eléctricas y mecánicas',
       'Reparación de motor y devanado',
@@ -28,6 +30,7 @@ const SERVICES = {
     title: 'Cambio de sellos mecánicos',
     desc: 'Reemplazo preciso para eliminar fugas y proteger el motor.',
     thumb: 'Foto: cambio de sellos mecánicos',
+    image: 'assets/video/sellos.png',
     points: [
       'Identificación del sello adecuado por modelo',
       'Desmontaje y limpieza de la cámara de sello',
@@ -40,6 +43,7 @@ const SERVICES = {
     title: 'Cambio de rodamientos',
     desc: 'Reducimos vibración y ruido restaurando el giro suave del motor.',
     thumb: 'Foto: cambio de rodamientos',
+    image: 'assets/video/rodamientos.png',
     points: [
       'Diagnóstico de vibración y ruido anormal',
       'Extracción de rodamientos desgastados',
@@ -52,6 +56,7 @@ const SERVICES = {
     title: 'Limpieza de filtros',
     desc: 'Limpieza profunda para mantener la eficiencia de filtrado.',
     thumb: 'Foto: limpieza de filtros',
+    image: 'assets/video/filtros.png',
     points: [
       'Retrolavado y limpieza de arena o cartucho',
       'Revisión de válvulas selectoras',
@@ -64,6 +69,7 @@ const SERVICES = {
     title: 'Instalación de equipos',
     desc: 'Instalación profesional de electrobombas nuevas, correctamente dimensionadas.',
     thumb: 'Foto: instalación de equipos',
+    image: 'assets/video/instalacion.png',
     points: [
       'Cálculo de caudal y potencia requerida',
       'Instalación de tuberías y conexiones',
@@ -76,6 +82,7 @@ const SERVICES = {
     title: 'Diagnóstico técnico',
     desc: 'Evaluación completa para identificar el origen exacto de la falla.',
     thumb: 'Foto: diagnóstico técnico',
+    image: 'assets/video/diagnostico.png',
     points: [
       'Revisión eléctrica y mecánica completa',
       'Medición de consumo y presión',

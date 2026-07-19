@@ -8,18 +8,23 @@ const grid = document.getElementById('services-grid');
 const footerServices = document.getElementById('footer-services');
 const overlay = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
 const modalDesc = document.getElementById('modal-desc');
 const modalPoints = document.getElementById('modal-points');
+const modalCta = document.getElementById('modal-cta');
+const WHATSAPP_NUMBER = '573124432044';
 
 function renderServices() {
   Object.keys(SERVICES).forEach((key, i) => {
     const s = SERVICES[key];
 
     const card = document.createElement('button');
-    card.className = 'service-card';
-    card.style.animationDelay = (i % 3) * 0.05 + 's';
+    card.className = 'service-card reveal';
+    const thumbContent = s.image
+      ? `<img src="${s.image}" alt="${s.title}" loading="lazy">`
+      : `<div class="img-placeholder">${PHOTO_ICON}${s.thumb}</div>`;
     card.innerHTML = `
-      <div class="thumb"><div class="img-placeholder">${PHOTO_ICON}${s.thumb}</div></div>
+      <div class="thumb">${thumbContent}</div>
       <h3>${s.title}</h3>
       <p>${s.desc}</p>
     `;
@@ -37,8 +42,13 @@ function renderServices() {
 function openModal(key) {
   const s = SERVICES[key];
   modalTitle.textContent = s.title;
+  modalImage.innerHTML = s.image
+    ? `<img src="${s.image}" alt="${s.title}">`
+    : `<div class="img-placeholder"><div>${PHOTO_ICON}Foto de referencia del trabajo realizado</div></div>`;
   modalDesc.textContent = s.desc;
   modalPoints.innerHTML = s.points.map(p => `<div class="modal-point">${CHECK_ICON}<span>${p}</span></div>`).join('');
+  const message = `Hola, quiero información sobre el servicio de ${s.title}.`;
+  modalCta.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -55,5 +65,23 @@ function initModalControls() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 }
 
+function initScrollReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  items.forEach((el) => observer.observe(el));
+}
+
 renderServices();
 initModalControls();
+initScrollReveal();
