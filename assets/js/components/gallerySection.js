@@ -20,7 +20,7 @@ export function renderGallerySection() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B4F9C" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <div class="gallery-track">
-            ${photos.map((p) => `<div class="gallery-slide"><div class="gallery-photo"><img src="${p.src}" alt="${p.alt || s.title}" loading="lazy"></div></div>`).join('')}
+            ${photos.map((p, i) => `<div class="gallery-slide"><div class="gallery-photo"><img src="${p.src}" alt="${p.alt || s.title}" loading="lazy" data-lightbox-group="${key}" data-lightbox-index="${i}"></div></div>`).join('')}
           </div>
           <button type="button" class="gallery-arrow next" aria-label="Foto siguiente">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B4F9C" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>

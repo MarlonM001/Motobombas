@@ -50,6 +50,7 @@
 }
 
 .contact-form-submit {
+  position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; gap: 10px;
   border: none; cursor: pointer; width: 100%; margin-top: 4px;
   background: var(--blue); color: #FFFFFF; font-family: var(--font-body); font-size: 16px; font-weight: 700;

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="assets/css/components/hero.css">
 <link rel="stylesheet" href="assets/css/components/services.css">
 <link rel="stylesheet" href="assets/css/components/gallery.css">
+<link rel="stylesheet" href="assets/css/components/lightbox.css">
 <link rel="stylesheet" href="assets/css/components/modal.css">
 <link rel="stylesheet" href="assets/css/components/benefits.css">
 <link rel="stylesheet" href="assets/css/components/faq.css">
@@ -122,7 +123,7 @@
         <div class="hero-stats">
           <div class="hero-stat">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>
-            <span>+500 Equipos Reparados</span>
+            <span>+<span class="stat-number" data-target="500">0</span> Equipos Reparados</span>
           </div>
           <div class="hero-stat">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>
@@ -253,6 +254,21 @@
     </div>
   </div>
 
+  <!-- LIGHTBOX DE GALERÍA -->
+  <div class="lightbox-overlay" id="lightbox-overlay">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar">&times;</button>
+    <button type="button" class="lightbox-arrow prev" id="lightbox-prev" aria-label="Foto anterior">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox-arrow next" id="lightbox-next" aria-label="Foto siguiente">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
   <!-- BENEFICIOS -->
   <section class="benefits" id="beneficios">
     <div class="benefits-inner">
@@ -283,7 +299,7 @@
           </div>
           <div class="benefit">
             <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
-            <div class="label">+10 años de experiencia</div>
+            <div class="label">+<span class="stat-number" data-target="10">0</span> años de experiencia</div>
             <p class="desc">Trayectoria comprobada en piscinas residenciales y comerciales.</p>
           </div>
           <div class="benefit">
@@ -343,6 +359,9 @@
       </div>
       <div class="carousel-dots" id="benefits-dots"></div>
     </div>
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,40 L1440,100 L0,100 Z" fill="#F5F7FA"/>
+    </svg>
   </section>
 
   <!-- PREGUNTAS FRECUENTES -->
@@ -404,6 +423,9 @@
         </button>
       </form>
     </div>
+    <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,0 480,90 720,40 C960,0 1200,80 1440,40 L1440,100 L0,100 Z" fill="#111827"/>
+    </svg>
   </section>
 
   <!-- FOOTER -->

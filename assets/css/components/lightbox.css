@@ -1,0 +1,50 @@
+/* ---------- Lightbox de galería ---------- */
+.lightbox-overlay {
+  position: fixed; inset: 0; z-index: 250; background: rgba(5,12,25,0.92);
+  display: none; align-items: center; justify-content: center; padding: 60px 24px;
+  animation: fadeIn 0.2s ease both;
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-figure { margin: 0; max-width: min(900px, 90vw); text-align: center; }
+.lightbox-figure img {
+  display: block; max-width: 100%; max-height: 76vh; margin: 0 auto;
+  border-radius: 10px; box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+  animation: fadeUp 0.25s ease both;
+}
+.lightbox-figure figcaption { margin-top: 16px; color: #D6E4F7; font-size: 14px; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 20px; z-index: 2;
+  width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  color: #FFFFFF; font-size: 24px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+.lightbox-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease;
+}
+.lightbox-arrow:hover { background: rgba(255,255,255,0.2); }
+.lightbox-arrow.prev { left: 16px; }
+.lightbox-arrow.next { right: 16px; }
+@media (max-width: 640px) {
+  .lightbox-overlay { padding: 80px 16px; }
+  .lightbox-arrow { width: 40px; height: 40px; }
+  .lightbox-arrow.prev { left: 8px; }
+  .lightbox-arrow.next { right: 8px; }
+}
+
+/* ---------- Zoom sutil en fotos al pasar el mouse ---------- */
+.gallery-photo img, .thumb img {
+  transition: transform 0.4s ease;
+}
+.gallery-photo:hover img { transform: scale(1.06); cursor: zoom-in; }
+.service-card:hover .thumb img { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-photo img, .thumb img { transition: none; }
+  .gallery-photo:hover img, .service-card:hover .thumb img { transform: none; }
+}
