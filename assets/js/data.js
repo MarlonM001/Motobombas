@@ -1,5 +1,5 @@
 // Contenido de cada servicio: tarjeta + modal de detalle.
-const SERVICES = {
+export const SERVICES = {
   mantenimiento: {
     title: 'Mantenimiento Preventivo y Correctivo',
     desc: 'Revisión periódica y reparación inmediata de tu equipo de bombeo, con repuestos originales.',
@@ -94,7 +94,7 @@ const SERVICES = {
 // Galería de trabajos realizados por servicio. Estructura lista para recibir
 // fotos reales: agregar objetos { src: 'assets/gallery/archivo.jpg', alt: '...' }
 // al arreglo del servicio correspondiente cuando estén disponibles.
-const GALLERY = {
+export const GALLERY = {
   mantenimiento: [
     { src: 'assets/gallery/MantenimientoPreventivo1.jpg', alt: 'Mantenimiento preventivo de electrobomba 1' },
     { src: 'assets/gallery/MantenimientoPreventivo2.jpg', alt: 'Mantenimiento preventivo de electrobomba 2' },
@@ -132,3 +132,32 @@ const GALLERY = {
     { src: 'assets/gallery/BombasSumergibles4.jpg', alt: 'Bombas sumergibles tipo lapicero 4' }
   ]
 };
+
+export const FAQS = [
+  {
+    q: '¿Qué tan rápido pueden atender una emergencia?',
+    a: 'Coordinamos la visita técnica en menos de 24 horas desde que nos contactas.'
+  },
+  {
+    q: '¿El servicio incluye garantía?',
+    a: 'Sí, todo trabajo realizado incluye garantía por escrito.'
+  },
+  {
+    q: '¿Usan repuestos originales?',
+    a: 'Sí, trabajamos con repuestos originales en todos los mantenimientos y reparaciones.'
+  },
+  {
+    q: '¿Solo atienden piscinas o también pozos profundos y aguas negras?',
+    a: 'También instalamos y damos mantenimiento a bombas sumergibles tipo lapicero para pozos profundos y sistemas de aguas negras, además de los equipos de piscina.'
+  },
+  {
+    q: '¿Qué es el Sistema Hidroflo MK?',
+    a: 'Es un sistema hidroneumático automatizado que entrega más presión de agua de forma constante, sin necesidad de accionar la bomba manualmente. Ideal para viviendas, edificios y locales comerciales.'
+  },
+  {
+    q: '¿Cómo solicito una cotización?',
+    a: 'Puedes escribirnos directo por WhatsApp o completar el formulario de contacto y te respondemos con la información lista.'
+  }
+];
+
+export const WHATSAPP_NUMBER = '573124432044';

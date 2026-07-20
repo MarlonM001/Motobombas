@@ -5,7 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AquaBomba — Mantenimiento Profesional de Electrobombas para Piscinas</title>
 <meta name="description" content="Reparación, mantenimiento preventivo e instalación de electrobombas para piscinas residenciales y comerciales. Técnicos certificados, repuestos originales.">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components/navbar.css">
+<link rel="stylesheet" href="assets/css/components/hero.css">
+<link rel="stylesheet" href="assets/css/components/services.css">
+<link rel="stylesheet" href="assets/css/components/gallery.css">
+<link rel="stylesheet" href="assets/css/components/modal.css">
+<link rel="stylesheet" href="assets/css/components/benefits.css">
+<link rel="stylesheet" href="assets/css/components/faq.css">
+<link rel="stylesheet" href="assets/css/components/contact-form.css">
+<link rel="stylesheet" href="assets/css/components/footer.css">
+<link rel="stylesheet" href="assets/css/components/floating-whatsapp.css">
 </head>
 <body>
 
@@ -234,6 +247,7 @@
         <div class="modal-includes">Incluye</div>
         <div class="modal-points" id="modal-points"></div>
         <a href="https://wa.me/573124432044" target="_blank" rel="noopener" class="modal-cta" id="modal-cta">Consultar por este servicio</a>
+        <button type="button" class="modal-form-link" id="modal-form-link">Prefiero completar el formulario</button>
         <button type="button" class="modal-gallery-link" id="modal-gallery-link">Ver trabajos relacionados</button>
       </div>
     </div>
@@ -331,30 +345,65 @@
     </div>
   </section>
 
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="faq-section" id="preguntas">
+    <div class="section-head reveal">
+      <div class="kicker">Preguntas frecuentes</div>
+      <h2>Resolvemos tus dudas</h2>
+      <p>Lo que más nos preguntan antes de agendar un servicio.</p>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </section>
+
   <!-- CONTACTO -->
   <section class="contact-section" id="contacto">
-    <div class="section-head reveal">
-      <div class="kicker">Contacto</div>
-      <h2>Cuéntanos qué necesitas</h2>
-      <p>Completa el formulario y te escribimos por WhatsApp con la información lista.</p>
+    <div class="contact-decor" aria-hidden="true">
+      <svg class="droplet contact-droplet-1" viewBox="0 0 24 24" fill="rgba(255,255,255,0.14)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet contact-droplet-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.18)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet contact-droplet-3 tier-2" viewBox="0 0 24 24" fill="rgba(255,255,255,0.12)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <svg class="droplet contact-droplet-4 tier-2" viewBox="0 0 24 24" fill="rgba(143,199,255,0.16)"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <span class="bubble contact-bubble-1"></span>
+      <span class="bubble contact-bubble-2 tier-2"></span>
+      <span class="bubble contact-bubble-3 tier-2"></span>
     </div>
-    <form class="contact-form reveal" id="contact-form">
-      <div class="form-row">
-        <label for="cf-nombre">Nombre</label>
-        <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" required>
+    <div class="contact-inner">
+      <div class="section-head reveal">
+        <div class="kicker">Contacto</div>
+        <h2>Cuéntanos qué necesitas</h2>
+        <p>Completa el formulario y te escribimos por WhatsApp con la información lista.</p>
       </div>
-      <div class="form-row">
-        <label for="cf-servicio">Servicio de interés</label>
-        <select id="cf-servicio" name="servicio" required>
-          <option value="">Selecciona un servicio</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label for="cf-detalle">Cuéntanos brevemente qué necesitas</label>
-        <textarea id="cf-detalle" name="detalle" rows="3" placeholder="Ej: la bomba de la piscina no enciende, hace ruido, necesito instalar un pozo profundo..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary contact-form-submit">Enviar por WhatsApp</button>
-    </form>
+      <form class="contact-card contact-form reveal" id="contact-form">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="cf-nombre">Nombre</label>
+            <div class="form-input-wrap">
+              <svg class="form-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="cf-servicio">Servicio de interés</label>
+            <div class="form-input-wrap">
+              <svg class="form-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              <select id="cf-servicio" name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="cf-detalle">Cuéntanos brevemente qué necesitas</label>
+          <div class="form-input-wrap form-input-wrap-textarea">
+            <svg class="form-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <textarea id="cf-detalle" name="detalle" rows="3" placeholder="Ej: la bomba de la piscina no enciende, hace ruido, necesito instalar un pozo profundo..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="contact-form-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+          Enviar por WhatsApp
+        </button>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -423,8 +472,12 @@
 
 </div>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/573124432044?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20mantenimiento%20de%20electrobombas." target="_blank" rel="noopener" class="floating-whatsapp" id="floating-whatsapp" aria-label="Hablar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.55 1.36 5.1L2 22l5.13-1.44c1.49.81 3.17 1.24 4.88 1.24h.01c5.46 0 9.91-4.45 9.91-9.91C21.93 6.45 17.49 2 12.04 2zm5.83 14.05c-.24.68-1.4 1.32-1.93 1.4-.49.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94s.72-2.09.98-2.37c.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.55.8 1.9.87 2.04.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.62.77 1.9.91.28.14.46.21.53.32.07.13.07.7-.17 1.38z"/></svg>
+</a>
+
+<script type="module" src="assets/js/app.js"></script>
 
 </body>
 </html>

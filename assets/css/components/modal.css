@@ -1,0 +1,46 @@
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(17,24,39,0.55); z-index: 200;
+  display: none; align-items: center; justify-content: center; padding: 24px;
+  animation: fadeIn 0.2s ease both;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  position: relative; background: #FFFFFF; border-radius: 16px; max-width: 520px; width: 100%;
+  max-height: 85vh; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3); animation: fadeUp 0.25s ease both;
+}
+/* Close button lives outside the scrolling content so it is always visible and
+   tappable, regardless of scroll position (avoids sticky-in-overflow quirks). */
+.modal-close {
+  position: absolute; top: 14px; right: 14px; z-index: 5;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--gray-600); font-size: 22px; line-height: 1;
+  background: rgba(17,24,39,0.06); border: none; transition: background 0.15s ease;
+}
+.modal-close:hover { background: rgba(17,24,39,0.12); }
+.modal-scroll {
+  max-height: 85vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 40px;
+}
+.modal-scroll h3 { font-size: 28px; font-weight: 700; color: var(--blue-dark); margin: 0 0 16px; padding-right: 40px; }
+.modal-image { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
+.modal-desc { font-size: 15px; color: var(--gray-600); line-height: 1.5; margin: 0 0 20px; }
+.modal-includes {
+  font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px;
+}
+.modal-points { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.modal-point { display: flex; gap: 10px; align-items: flex-start; }
+.modal-point span { font-size: 14px; color: var(--text); line-height: 1.4; }
+.modal-cta {
+  text-decoration: none; display: block; text-align: center; background: var(--blue-dark);
+  color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 14px; border-radius: 8px;
+}
+.modal-form-link, .modal-gallery-link {
+  display: block; width: 100%; text-align: center; background: none;
+  color: var(--blue); font-size: 14px; font-weight: 700; padding: 12px;
+  border: none; cursor: pointer; margin-top: 10px; font-family: inherit;
+}
+.modal-form-link:hover, .modal-gallery-link:hover { color: var(--blue-dark); text-decoration: underline; }
+.modal-image img { width: 100%; height: 100%; display: block; object-fit: cover; }

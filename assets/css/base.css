@@ -1,0 +1,136 @@
+:root {
+  --blue-dark: #0B4F9C;
+  --blue-darker: #0a2c58;
+  --blue: #2196F3;
+  --bg: #F5F7FA;
+  --text: #374151;
+  --gray-900: #111827;
+  --gray-600: #6B7280;
+  --gray-400: #9CA3AF;
+
+  /* Tipografía: Barlow Condensed para títulos (carácter técnico, de
+     instrumentación/presión) + Barlow para texto — misma familia tipográfica,
+     dos anchos, combinación deliberada en vez de dos fuentes sin relación. */
+  --font-display: 'Barlow Condensed', Helvetica, Arial, sans-serif;
+  --font-body: 'Barlow', Helvetica, Arial, sans-serif;
+
+  /* Elevación consistente para cards, modales y botones flotantes. */
+  --shadow-sm: 0 2px 10px rgba(11,79,156,0.06);
+  --shadow-md: 0 10px 24px rgba(11,79,156,0.14);
+  --shadow-lg: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+* { box-sizing: border-box; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes growLine { from { width: 0; opacity: 0; } to { width: 64px; opacity: 1; } }
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+a { color: var(--blue); }
+a:hover { color: var(--blue-dark); }
+
+/* ---------- Foco de teclado ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 2px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Image placeholders ---------- */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+  color: #5B7FA6;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.img-placeholder svg { display: block; margin: 0 auto 10px; opacity: 0.55; }
+
+/* ---------- Botones ---------- */
+.btn-primary {
+  text-decoration: none; background: var(--blue); color: #FFFFFF; font-size: 16px; font-weight: 700;
+  padding: 17px 36px; border-radius: 8px; box-shadow: 0 10px 28px rgba(33,150,243,0.4);
+  border: none; cursor: pointer;
+}
+
+/* ---------- Decoraciones compartidas (gotas, burbujas) ---------- */
+/* Usadas por Hero, Servicios (gate) y Footer; cada componente solo
+   define sus propias posiciones (droplet-N / gate-droplet-N / footer-droplet-N). */
+.droplet { position: absolute; display: block; }
+.bubble {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0) 75%);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+@keyframes dropFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.85; }
+  50%      { transform: translateY(-22px) rotate(-6deg); opacity: 1; }
+}
+@keyframes bubbleRise {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.45; }
+  50%      { transform: translateY(-28px) scale(1.15); opacity: 0.95; }
+}
+
+/* ---------- Carrusel genérico (flechas y puntos) ---------- */
+/* Usado por Beneficios y por el slider del Hero. */
+.carousel-arrow {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.carousel-arrow:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); }
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 4px; padding: 0; border: none; cursor: pointer;
+  background: rgba(255,255,255,0.3); transition: width 0.25s ease, background 0.25s ease;
+}
+.carousel-dot.active { width: 22px; background: #FFFFFF; }
+
+/* ---------- Encabezado de sección ---------- */
+/* Usado por Servicios, Galería y Contacto. */
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.section-head .kicker {
+  font-family: var(--font-display); color: var(--blue); font-size: 15px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px;
+}
+.section-head h2 { font-size: 40px; font-weight: 700; color: var(--blue-dark); margin: 0 0 16px; letter-spacing: 0; }
+.section-head p { font-size: 17px; color: var(--gray-600); line-height: 1.5; margin: 0; }
+
+/* ---------- Utilidades responsive compartidas ---------- */
+@media (max-width: 960px) {
+  .btn-primary { padding: 13px 28px; font-size: 15px; }
+  .tier-3 { display: none; }
+}
+@media (max-width: 560px) {
+  .carousel-arrow { width: 34px; height: 34px; flex-shrink: 0; }
+  .tier-2 { display: none; }
+}
